@@ -161,15 +161,11 @@ class TenantResolver
     {
         $hasConnection = ! empty($activeTenant->connection);
         $connection = $hasConnection ? $activeTenant->connection : $this->tenantConnection;
-        $prefix = ($hasConnection && ! empty($activeTenant->subdomain)) ? $activeTenant->subdomain . '_' : '';
-
-        if ($hasConnection && empty($activeTenant->subdomain))
-        {
-            $prefix = 'tenant' . $activeTenant->id . '_';
-        }
+        $prefix = ($activeTenant->prefix) ? $activeTenant->prefix . '_' : '';
 
         config()->set('database.default', $connection);
         config()->set('database.connections.' . $connection . '.prefix', $prefix);
+        config()->set('database.connections.' . $connection . '.username', $activeTenant->username);
 
         if ($hasConnection)
         {

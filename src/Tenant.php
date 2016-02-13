@@ -17,6 +17,7 @@ class Tenant extends Model implements TenantContract
         'subdomain',
         'alias_domain',
         'connection',
+        'username',
         'meta'
     ];
 
@@ -26,6 +27,7 @@ class Tenant extends Model implements TenantContract
         'subdomain' => 'string',
         'alias_domain' => 'string',
         'connection' => 'string',
+        'username' => 'string',
         'meta' => 'array'
     ];
 
@@ -84,6 +86,16 @@ class Tenant extends Model implements TenantContract
     public function setConnectionAttribute($value)
     {
         $this->attributes['connection'] = strtolower(trim($value));
+    }
+
+    public function getUsernameAttribute()
+    {
+        return $this->attributes['username'];
+    }
+
+    public function setUsernameAttribute($value)
+    {
+        $this->attributes['username'] = strtolower(trim($value));
     }
 
     public function getMetaAttribute()
