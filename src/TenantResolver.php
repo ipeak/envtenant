@@ -166,6 +166,7 @@ class TenantResolver
         config()->set('database.default', $connection);
         config()->set('database.connections.' . $connection . '.prefix', $prefix);
         config()->set('database.connections.' . $connection . '.username', $activeTenant->username);
+        config()->set('database.connections.' . $connection . '.database', $activeTenant->database);
 
         if ($hasConnection)
         {

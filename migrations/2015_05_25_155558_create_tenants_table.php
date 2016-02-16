@@ -24,6 +24,7 @@ class CreateTenantsTable extends Migration
             $table->string('alias_domain')->unique()->nullable();
             $table->string('connection');
             $table->string('username')->unique()->nullable();
+            $table->string('database')->unique()->nullable();
             $table->text('meta');
 
             $table->softDeletes();
