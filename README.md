@@ -1,5 +1,11 @@
 ## Laravel EnvTenant 2.2.*
 
+**WARNING: This project is now discontinued and will no longer be updated. If you want to use it, the code is fairly straightforward, so feel free to Fork and continue as you see fit.**
+
+Version 2.2.10 Changes:
+
+- Laravel 5.3 support.
+
 Version 2.2.6 Changes:
 
 - Set connection column to 'pending' to block tenant access until admin approval.
